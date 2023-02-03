@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection){
     console.log(computerSelection);
     // if(playerSelection.equals(computerPlay)){
 
-    // }
+    // }   // logic when both the values are same
     let randomNumber = Math.floor(Math.random()*2);
     switch(randomNumber){
         case 0:
@@ -46,16 +46,18 @@ function game(){
     userCount = 0;
     computerCount = 0;
     for(let i=0; i<5; i++){
-        const playerSelection = window.prompt();
+        const playerSelection = window.prompt("To start the play please enter 'rock' or 'paper' or 'scissors'");
         playResult = this.playRound(playerSelection, computerSelection);
         console.log(playResult)
         if( playResult.includes("You Win")){
             userCount = userCount + 1;
-            console.log(userCount);
+            console.log("Your score: ",userCount);
+            console.log("Computer score: ",computerCount);
         }
         else {
             computerCount = computerCount + 1;
-            console.log(computerCount);
+            console.log("Computer score: ",computerCount);
+            console.log("Your score: ",userCount);
         }
     }
    
